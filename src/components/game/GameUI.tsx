@@ -2,25 +2,25 @@ import useGameState from "../../lib/stores/useGameState";
 
 export default function GameUI() {
   const { score, enemiesKilled, messagesRead, crosshair, playerHealth, playerMaxHealth, ammoInClip, reserveAmmo, maxClipSize, isReloading, currentLevel, roomLayout } = useGameState();
-  
+
   const healthPercent = (playerHealth / playerMaxHealth) * 100;
   const clipPercent = (ammoInClip / maxClipSize) * 100;
-  
+
   return (
     <>
       {/* Crosshair */}
       {crosshair && (
-        <div 
+        <div
           className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none z-10"
-          style={{ 
-            width: '20px', 
+          style={{
+            width: '20px',
             height: '20px',
             border: '2px solid #ff4400',
             borderRadius: '50%',
             boxShadow: '0 0 10px #ff4400'
           }}
         >
-          <div 
+          <div
             className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
             style={{
               width: '4px',
@@ -31,10 +31,10 @@ export default function GameUI() {
           />
         </div>
       )}
-      
+
       {/* Game stats */}
       <div className="fixed top-4 left-4 text-white z-10 font-mono">
-        <div 
+        <div
           className="bg-black bg-opacity-70 p-4 rounded border border-orange-600"
           style={{ minWidth: '200px' }}
         >
@@ -53,17 +53,17 @@ export default function GameUI() {
                 </span>
               </div>
               <div className="w-full h-3 bg-gray-800 border border-orange-600 rounded">
-                <div 
+                <div
                   className={`h-full rounded transition-all duration-300 ${
-                    playerHealth > 60 ? 'bg-green-500' : 
-                    playerHealth > 30 ? 'bg-yellow-500' : 
+                    playerHealth > 60 ? 'bg-green-500' :
+                    playerHealth > 30 ? 'bg-yellow-500' :
                     'bg-red-500'
                   }`}
                   style={{ width: `${healthPercent}%` }}
                 />
               </div>
             </div>
-            
+
             <div className="flex justify-between">
               <span className="text-orange-300">Score:</span>
               <span className="text-yellow-400 font-bold">{score}</span>
@@ -79,7 +79,7 @@ export default function GameUI() {
           </div>
         </div>
       </div>
-      
+
       {/* Ammo Counter - Bottom Left */}
       <div className="fixed bottom-4 left-4 text-white z-10 font-mono">
         <div className="bg-black bg-opacity-70 p-4 rounded border border-orange-600">
@@ -90,8 +90,8 @@ export default function GameUI() {
             </div>
           ) : (
             <div>
-              <div className="text-4xl font-bold" style={{ 
-                color: ammoInClip > 25 ? '#44ff44' : ammoInClip > 10 ? '#ffff44' : '#ff4444' 
+              <div className="text-4xl font-bold" style={{
+                color: ammoInClip > 25 ? '#44ff44' : ammoInClip > 10 ? '#ffff44' : '#ff4444'
               }}>
                 {ammoInClip}
               </div>
@@ -101,10 +101,10 @@ export default function GameUI() {
             </div>
           )}
           <div className="w-32 h-2 bg-gray-800 border border-orange-600 rounded mt-2">
-            <div 
+            <div
               className={`h-full rounded transition-all duration-200 ${
-                ammoInClip > 25 ? 'bg-green-500' : 
-                ammoInClip > 10 ? 'bg-yellow-500' : 
+                ammoInClip > 25 ? 'bg-green-500' :
+                ammoInClip > 10 ? 'bg-yellow-500' :
                 'bg-red-500'
               }`}
               style={{ width: `${clipPercent}%` }}
@@ -115,7 +115,7 @@ export default function GameUI() {
           </div>
         </div>
       </div>
-      
+
       {/* Instructions */}
       <div className="fixed bottom-4 right-4 text-white z-10 font-mono">
         <div className="bg-black bg-opacity-70 p-3 rounded border border-orange-600 text-sm">
@@ -125,6 +125,23 @@ export default function GameUI() {
             <div>Mouse - Look</div>
             <div>Left Click - Shoot/Close</div>
             <div>R - Reload</div>
+          </div>
+        </div>
+      </div>
+
+      {/* Status face */}
+      <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 text-white z-10 font-mono">
+        <div className="bg-black bg-opacity-80 px-4 py-3 rounded border border-orange-600 shadow-lg flex items-center gap-3">
+          <div className="w-20 h-20 border-2 border-orange-500 rounded-sm overflow-hidden bg-black">
+            <img
+              src="/domguy/domguy-1.png"
+              alt="Domguy status"
+              className="w-full h-full object-cover"
+              draggable={false}
+            />
+          </div>
+          <div className="text-orange-300 text-xs leading-relaxed max-w-40">
+            Stay focused, Marine. Keep your finger on the trigger and your health above zero.
           </div>
         </div>
       </div>
