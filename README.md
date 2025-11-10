@@ -9,3 +9,7 @@ A digital leaving card for James.
 pnpm install
 pnpm dev
 ```
+
+## Message submission
+
+You can add your msg to `src/lib/gameData.ts`.
