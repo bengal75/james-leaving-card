@@ -5,6 +5,14 @@ export default function GameUI() {
 
   const healthPercent = (playerHealth / playerMaxHealth) * 100;
   const clipPercent = (ammoInClip / maxClipSize) * 100;
+  const spriteFrameWidth = 180;
+  const spriteFrameCount = 10;
+  const clampedHealthPercent = Math.max(0, Math.min(healthPercent, 100)) || 0;
+  const spriteIndex = Math.min(
+    spriteFrameCount - 1,
+    Math.floor((100 - clampedHealthPercent) / (100 / spriteFrameCount))
+  );
+  const spriteOffset = spriteIndex * spriteFrameWidth;
 
   return (
     <>
@@ -132,14 +140,17 @@ export default function GameUI() {
       {/* Status face */}
       <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 text-white z-10 font-mono">
         <div className="bg-black bg-opacity-80 px-4 py-3 rounded border border-orange-600 shadow-lg flex items-center gap-3">
-          <div className="w-20 h-20 border-2 border-orange-500 rounded-sm overflow-hidden bg-black">
-            <img
-              src="/domguy/domguy-1.png"
-              alt="Domguy status"
-              className="w-full h-full object-cover"
-              draggable={false}
-            />
-          </div>
+          <div
+            className="border-2 border-orange-500 rounded-sm overflow-hidden bg-black"
+            style={{
+              width: `${spriteFrameWidth}px`,
+              height: `${spriteFrameWidth}px`,
+              backgroundImage: "url('/domguy/all.png')",
+              backgroundPosition: `-${spriteOffset}px 0`,
+              backgroundSize: `${spriteFrameWidth * spriteFrameCount}px ${spriteFrameWidth}px`,
+            }}
+            aria-label="Domguy status"
+          />
           <div className="text-orange-300 text-xs leading-relaxed max-w-40">
             Stay focused, Marine. Keep your finger on the trigger and your health above zero.
           </div>
