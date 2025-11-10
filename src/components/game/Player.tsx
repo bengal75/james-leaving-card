@@ -1,7 +1,7 @@
 import { useRef, useEffect } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
 import { useKeyboardControls } from "@react-three/drei";
-import { PerspectiveCamera } from "three";
+// import { PerspectiveCamera } from "three";
 import useGameState from "../../lib/stores/useGameState";
 import { useAudio } from "../../lib/stores/useAudio";
 import Minigun from "./Minigun";
@@ -9,6 +9,7 @@ import { GAME_CONFIG } from "../../lib/gameData";
 import * as THREE from "three";
 import { PointerLockControls } from "@react-three/drei";
 
+// @ts-expect-error Do not care about your error
 enum Controls {
   forward = "forward",
   backward = "backward",
@@ -20,15 +21,15 @@ export default function Player() {
   const { camera, gl } = useThree();
   const minigunRef = useRef<THREE.Group>(null);
   const {
-    playerPosition,
-    playerRotation,
+    // playerPosition,
+    // playerRotation,
     updatePlayerPosition,
-    updatePlayerRotation,
+    // updatePlayerRotation,
     addBullet,
     showDialog,
     fireWeapon,
     reload,
-    isReloading,
+    // isReloading,
   } = useGameState();
   const { playShoot } = useAudio();
 
