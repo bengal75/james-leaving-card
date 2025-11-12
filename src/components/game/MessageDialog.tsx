@@ -17,7 +17,7 @@ export default function MessageDialog() {
         // Auto-scroll slowly if content overflows
         let scrollTop = 0;
         const scrollHeight = element.scrollHeight - element.clientHeight;
-        const scrollSpeed = 0.5; // pixels per frame
+        const scrollSpeed = 0.2; // pixels per frame
 
         const scroll = () => {
           if (element && scrollTop < scrollHeight) {
@@ -32,7 +32,7 @@ export default function MessageDialog() {
         // Start scrolling after a brief delay
         setTimeout(() => {
           scroll();
-        }, 1000);
+        }, 3000);
       } else {
         setIsScrolling(false);
       }
@@ -46,7 +46,7 @@ export default function MessageDialog() {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80">
       <div
-        className="bg-gray-900 border-2 border-orange-600 rounded-lg p-6 max-w-2xl max-h-96 overflow-hidden shadow-2xl"
+        className="bg-gray-900 border-2 border-orange-600 rounded-lg p-6 max-w-2xl max-h-112 overflow-hidden shadow-2xl"
         style={{
           boxShadow: '0 0 20px #ff4400, inset 0 0 10px rgba(255, 68, 0, 0.2)',
           background: 'linear-gradient(145deg, #1a1a1a, #2d2d2d)'
@@ -55,7 +55,7 @@ export default function MessageDialog() {
         {/* Message content */}
         <div
           ref={contentRef}
-          className="text-orange-100 overflow-y-auto max-h-80 pr-4"
+          className="text-orange-100 overflow-y-auto max-h-96 pr-4"
           style={{
             scrollbarWidth: 'thin',
             scrollbarColor: '#ff4400 #333333'
