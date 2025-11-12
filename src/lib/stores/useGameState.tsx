@@ -140,7 +140,7 @@ const useGameState = create<GameState>()(
 							.add(
 								bullet.direction
 									.clone()
-									.multiplyScalar(bullet.speed)
+									.multiplyScalar(bullet.speed),
 							),
 					}))
 					.filter((bullet) => {
@@ -193,8 +193,8 @@ const useGameState = create<GameState>()(
 						? {
 								...enemy,
 								health: Math.max(0, enemy.health - damage),
-						  }
-						: enemy
+							}
+						: enemy,
 				),
 			}));
 		},
@@ -203,7 +203,7 @@ const useGameState = create<GameState>()(
 		hitMessageBox: (id) => {
 			set((state) => ({
 				messageBoxes: state.messageBoxes.map((box) =>
-					box.id === id ? { ...box, hit: true } : box
+					box.id === id ? { ...box, hit: true } : box,
 				),
 			}));
 		},
@@ -244,7 +244,7 @@ const useGameState = create<GameState>()(
 			set((state) => ({
 				playerHealth: Math.min(
 					state.playerMaxHealth,
-					state.playerHealth + amount
+					state.playerHealth + amount,
 				),
 			}));
 		},
@@ -301,7 +301,7 @@ const useGameState = create<GameState>()(
 		hitGifBox: (id) => {
 			set((state) => ({
 				gifBoxes: state.gifBoxes.map((box) =>
-					box.id === id ? { ...box, hit: true } : box
+					box.id === id ? { ...box, hit: true } : box,
 				),
 			}));
 		},
@@ -323,7 +323,7 @@ const useGameState = create<GameState>()(
 					roomLayout: newLayout,
 					playerHealth: Math.min(
 						state.playerMaxHealth,
-						state.playerHealth + 30
+						state.playerHealth + 30,
 					), // Heal on level up
 					ammoInClip: GAME_CONFIG.AMMO_PER_CLIP,
 					reserveAmmo:
@@ -351,7 +351,7 @@ const useGameState = create<GameState>()(
 				reserveAmmo: GAME_CONFIG.MAX_AMMO - GAME_CONFIG.AMMO_PER_CLIP,
 			});
 		},
-	}))
+	})),
 );
 
 export default useGameState;

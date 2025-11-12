@@ -131,7 +131,7 @@ export default function GameWorld() {
 							enemiesSpawnedThisLevel.current = 0;
 							unsubscribe();
 						}
-					}
+					},
 				);
 			}, 1000);
 		}
@@ -202,7 +202,7 @@ export default function GameWorld() {
 				playHit();
 				useGameState.setState((state) => ({
 					enemies: state.enemies.map((e) =>
-						e.id === enemy.id ? { ...e, lastAttackTime: now } : e
+						e.id === enemy.id ? { ...e, lastAttackTime: now } : e,
 					),
 				}));
 			}
