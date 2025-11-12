@@ -90,6 +90,17 @@ export const GAME_MESSAGES = [
     `,
 		position: new THREE.Vector3(6, 3, 6),
 	},
+	{
+		id: "andy",
+		message: `
+  		<img style="float:left; margin-right: 12px;" src="https://media.licdn.com/dms/image/v2/C4D03AQF3DBHZ8WhgCw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1601802361464?e=1764806400&v=beta&t=48oA5jYHFPXBkdirIwg3rX33txC6B69GoyLJF_8FgzE" width="60" height="60" />
+      <h3 style="color: #ff6600; margin-bottom: 16px;">Bye James!</h3>
+      <p style="margin-bottom: 12px;">Sorry to see you go.  Quite enjoyed the one-to-one calls!</p>
+      <p style="margin-bottom: 12px;">I hope everything works out for you, you enjoy the new gaff, and whatever new role you find yourself in.</p>
+      <p style="margin-bottom: 12px;">Take care. Andy</p>
+    `,
+		position: new THREE.Vector3(-2, 3, 7),
+	},
 ];
 
 // Predefined enemy spawn positions
