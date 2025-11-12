@@ -39,7 +39,7 @@ export const GAME_MESSAGES = [
       <h3 style="color: #ff6600; margin-bottom: 16px;">Bye James!</h3>
       <p style="margin-bottom: 12px;">Sorry to see you go.  Quite enjoyed the one-to-one calls!</p>
       <p style="margin-bottom: 12px;">I hope everything works out for you, you enjoy the new gaff, and whatever new role you find yourself in.</p>
-      <p style="margin-bottom: 12px;">Take care. Andy</p>
+      <p>Take care. Andy</p>
     `,
 		position: new THREE.Vector3(-2, 3, 7),
 	},
@@ -71,25 +71,6 @@ export const GAME_MESSAGES = [
       <p style="color: #ff8844;">Dom</p>
     `,
 		position: new THREE.Vector3(-5, 2, 8),
-	},
-	{
-		id: "secrets",
-		message: `
-      <h3 style="color: #ff6600; margin-bottom: 16px;">Hidden Secrets</h3>
-      <p style="margin-bottom: 12px;">This room holds ancient mysteries...</p>
-      <p style="margin-bottom: 12px;">The creatures you fight were once like you.</p>
-      <p style="margin-bottom: 12px;">Each message box contains a fragment of the truth.</p>
-      <p style="margin-bottom: 12px;">Collect them all to understand your fate.</p>
-      <p style="margin-bottom: 12px;">But beware - knowledge comes at a price.</p>
-      <div style="border-top: 1px solid #ff4400; padding-top: 12px; margin-top: 16px;">
-        <p style="font-style: italic; color: #cc6600;">
-          "In this room, time moves differently..."<br/>
-          "The walls remember everything..."<br/>
-          "Your gun is not your only weapon..."
-        </p>
-      </div>
-    `,
-		position: new THREE.Vector3(6, 3, 6),
 	},
 ];
 
