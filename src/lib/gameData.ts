@@ -55,7 +55,7 @@ export const GAME_MESSAGES = [
 	{
 		id: "jon",
 		message: `
-      <h3 style="color: #cc4400; margin-bottom: 16px;">Mission Briefing</h3>
+      <h3 style="color: #cc4400; margin-bottom: 16px;">Mission Briefing Expedia</h3>
       <p style="margin-bottom: 12px;">James - I think the only time we crossed paths was on Expedia about 100 years ago, but so much has happened since then, I'm not sure if I can trust my own memory anymore.</p>
       <p style="margin-bottom: 12px;">Very sad to see another familiar name leaving the fold, but absolutely & truly wish you all the best with whatever comes next.</p>
 	  <p>JonT.</p>
@@ -65,10 +65,19 @@ export const GAME_MESSAGES = [
 	{
 		id: "dom",
 		message: `
-      <h3 style="color: #aa3300; margin-bottom: 16px;">Combat Tips</h3>
-      <p style="margin-bottom: 12px;">James! It's been years since we spoke, I'll always remember that awesome talk you gave on making a game in a browser back in First St and the detail of what's going on (Render loop etc)- it was super impressive and will stay with me. </p>
+      <h3 style="color: #aa3300; margin-bottom: 16px;">Render loop</h3>
+      <p style="margin-bottom: 12px;">James! It's been years since we spoke, I'll always remember that awesome talk you gave on making a game in a browser back in First St and the detail of what's going on (Render loop etc)- it was super impressive and will stay with me.</p>
       <p style="margin-bottom: 12px;">Wishing you all the best on whatever is next, I know you'll be missed alot here - take care!!</p>
       <p style="color: #ff8844;">Dom</p>
+    `,
+		position: new THREE.Vector3(-5, 2, 8),
+	},
+	{
+		id: "dom",
+		message: `
+      <h3 style="color: #aa3300; margin-bottom: 16px;">Sorry to see you go.</h3>
+      <p style="margin-bottom: 12px;">When I eventually take over the world there will be a special place for you in Hodgetopia along with a reasonable size golden statue of you doing the doom meme rubbing your face with our enemies blood.</p>
+      <p style="color: #ff8844;">John Hodges</p>
     `,
 		position: new THREE.Vector3(-5, 2, 8),
 	},
