@@ -72,6 +72,17 @@ export const GAME_MESSAGES = [
     `,
 		position: new THREE.Vector3(-5, 2, 8),
 	},
+	{
+		id: "ben",
+		message: `
+      <h3 style="color: #86b66e; margin-bottom: 16px;">A wild Caterpie appeared!</h3>
+      <p style="margin-bottom: 12px;">Oh wait, wrong game 🤷</p>
+      <p style="margin-bottom: 12px;">James, you've been a stalwart of the web practice and although we never got to work together fully on a project, I will miss chatting (and sometimes playing browser-based games 😁) with you every week!</p>
+      <p style="margin-bottom: 12px;">I hope you manage to enjoy a bit of a break before diving back into something new - but when you do, wishing you all the very best for whatever it is!</p>
+      <p style="color: #ff8844;">Ben G</p>
+    `,
+		position: new THREE.Vector3(7, 7, -8),
+	},
 ];
 
 // Predefined enemy spawn positions
